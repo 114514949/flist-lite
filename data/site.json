@@ -1,0 +1,14 @@
+{
+  "name": "Flist-lite",
+  "title": "Flist-lite · 精选资源",
+  "description": "点击文件即可查看该文件独立的介绍与下载地址，支持大陆 / 海外 / 备用多线路。",
+  "logo": "assets/logo.svg",
+  "announcement": "data/announcement.md",
+  "footer": "本站仅提供资源索引，下载地址以文件介绍为准",
+  "links": [
+    {
+      "label": "使用说明",
+      "url": "https://github.com/YGPTDR-web/flist-lite"
+    }
+  ]
+}
