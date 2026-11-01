@@ -1,10 +1,10 @@
 # Flist-lite
 
-一个类似 [FList](https://github.com/jianjianai/FList) 的文件列表站，为 Cloudflare Pages 量身定制。
+一个类 [FList](https://github.com/jianjianai/FList) 的项目，为 静态搭建 量身定制。
 
-**核心区别：没有「下载」按钮。** 点开一个文件，列表下方会出现**这个文件自己的介绍**（取代全局公告）；介绍里写功能特点，并用一种简单的语法列出多条下载地址（大陆主用 / 海外主用 / 备用……想放几条放几条）。点「返回列表」或按 `Esc`，公告自动回来。
+点开一个文件，列表下方会出现**这个文件的介绍**；介绍里写功能特点，并用一种简单的语法列出多条下载地址（大陆主用 / 海外主用 / 备用……想放几条放几条）。点「返回列表」或按 `Esc`，公告自动回来。
 
-纯静态、零依赖、零构建：改 `data/` 里的两个 JSON 和几个 `.md`，刷新页面就生效。
+纯静态、零依赖、零构建：改 `data/` 里的两个 JSON 和 `.md`，刷新页面就生效。
 
 ---
 
@@ -27,12 +27,11 @@
 ## 它做了什么
 
 - **文件独立介绍**：每个文件一篇 Markdown，点开即替换列表下方的全局公告，返回后公告复现
-- **无内置下载**：列表里点文件只是打开介绍，真正的下载地址写在介绍里，随时可增删改
+- **无内置下载**：列表里点文件只是打开介绍，下载地址写在介绍里，随时可增删改
 - **多线路下载块**：` ```links ` 语法，一行一条，自动挑出主链接并高亮，其余按大陆绿 / 海外蓝 / 备用橙区分，带「复制直链」按钮
 - **完整 Markdown**：标题、表格、代码块、引用、列表、任务列表、图片、脚注式排版
 - **好用的小东西**：搜索过滤、按名称/大小/时间排序、深浅色主题、移动端适配、键盘快捷键（`/` 搜索、`Esc` 返回）
-- **单色文件图标**：和 [OpenList](https://github.com/OpenListTeam/OpenList) 前端同一套 —— [Bootstrap Icons](https://github.com/twbs/icons) 的 file-earmark 系列 + [Ionicons](https://github.com/ionic-team/ionicons) 的文件夹（都是 MIT），全部文件共用一档灰蓝，只有文件夹换一档亮蓝
-- **对 Cloudflare 友好**：没有构建步骤，没有 Node 依赖，`_headers` 里已经配好安全头和缓存策略
+- **单色文件图标**：和 [OpenList](https://github.com/OpenListTeam/OpenList) 前端同一套 —— [Bootstrap Icons](https://github.com/twbs/icons) 的 file-earmark 系列 + [Ionicons](https://github.com/ionic-team/ionicons) 的文件夹，全部文件共用一档灰蓝，只有文件夹换一档亮蓝
 
 ## 和原版 FList 的差别
 
@@ -166,9 +165,9 @@ flist-lite/
 
 > 链接只放行 `http` / `https` / `mailto` / `tel` 和站内相对路径，`javascript:` 一律丢弃。
 
-## 部署到 Cloudflare Pages
+## 若部署到 Cloudflare Pages
 
-**方式 A：网页上传（最省事）**
+**方式 A：网页上传**
 
 1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Upload assets**
 2. 把整个 `flist-lite` 文件夹拖进去（或先压成 zip；`.shots/`、`.git/` 之类不用传）
@@ -262,13 +261,6 @@ node tools/selftest.mjs   # 跑 Markdown 渲染器与图标自测（47 项）
 Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
 ```
 
-修改时的格式约定：
-
-- 保留 `Copyright` 一词；年份写**首次发布**的年份即可，跨年开发可写作 `2025-2026`；
-- 署名可用 GitHub ID、真名，或 `真名 (@GitHubID)`；
-- 不要写尚未取得的法人主体名称（例如尚未注册的公司），取得后再补一行；
-- 想署仓库地址，可在版权行下方另起一行写 `本项目：Flist-lite https://github.com/YGPTDR-web/flist-lite`。
-
 若以本协议发布自己的衍生作品，除改写 `NOTICE` 的版权行外，还须同步修改 `LICENSE` 第 1.9 条中的许可人名称与主页，其余条款无需改动。
 
 ### 第三方组件
@@ -286,4 +278,4 @@ Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
 
 ### 商业授权
 
-商业用途（含企业内部支撑营收的业务系统、付费服务、广告变现、有偿托管等，详见第 1.4 条 (f)–(j)）须事先取得书面授权。请求渠道：仓库 Issue 或版权行中的联系方式。
+商业用途（含企业内部支撑营收的业务系统、付费服务、广告变现、有偿托管等，详见第 1.4 条 (f)–(j)）须事先取得书面授权。请求渠道：2807078381@qq.com
