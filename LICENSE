@@ -1,0 +1,806 @@
+Flist-lite 非商业相同方式共享许可协议 1.0
+Flist-lite Non-Commercial Share-Alike License 1.0
+
+Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+
+================================================================================
+第零条　本协议的性质（请先阅读）
+================================================================================
+
+0.1　本协议允许任何人在非商业范围内免费使用、复制、修改本项目，并允许再分发
+　　 本项目及其修改版本，但禁止商业使用，且要求衍生作品以相同条款公开完整
+　　 对应源代码。
+
+0.2　本协议不是开放源代码促进会（Open Source Initiative，OSI）所定义的
+　　 "开源"协议。OSI《开源定义》要求许可证不得歧视任何领域或用途
+　　 （no discrimination against fields of endeavor），而本协议第 1.4 条明确
+　　 排除商业用途，二者直接冲突。本项目的准确定位是：
+　　 　　源码可用（source-available）＋ 非商业相同方式共享（non-commercial
+　　 　　copyleft）。
+　　 因此，本协议未经 OSI 审查，也不应被描述或宣传为"开源协议"。
+
+0.3　本协议是著作权许可合同，不是买卖合同，也不转让著作权本身。著作权仍归
+　　 第 1.9 条所列的许可人所有。您依本协议取得的只是第 2.1 条所列的使用许可。
+
+0.4　与常见协议的差别（仅为帮助判断，不构成本协议条款，也不改变本协议任何
+　　 条文的含义）：
+
+　　（a）CC BY-NC-SA 4.0：同样满足"非商业＋署名＋相同方式共享"，但它为文字、
+　　 　　 图片等内容作品设计，未规定源代码的提供方式，也没有专利许可条款，
+　　 　　 用于约束一个由 HTML/CSS/JS 构成的站点不够贴切。
+　　（b）PolyForm Noncommercial 1.0.0：满足非商业要求，但不要求衍生作品开源，
+　　 　　 缺少相同方式共享约束，修改版本可以不回流。
+　　（c）Apache-2.0 / MIT：均为 OSI 认可的开源协议，允许商业使用，与本协议
+　　 　　 第 1.4 条的要求相反；其署名、专利与免责条款的通行措辞为本协议所
+　　 　　 参考。
+
+0.5　本协议不构成法律意见。在商业场景、跨境部署或涉及第三方权利的情形下，
+　　 请咨询执业律师。
+
+0.6　接受。您以任何方式使用、复制、修改或分发本项目，即视为接受本协议全部
+　　 条款；不接受本协议的，不得行使第二条授予的任何权利。以网站形式分发时，
+　　 应在页脚或「关于」页面以显著方式提供本协议全文的链接（与第 3.1 条的
+　　 署名要求一并履行）。
+
+================================================================================
+第一条　定义
+================================================================================
+
+1.1　"本项目"（在本协议中也称"许可作品"）指以本协议发布的「Flist-lite」
+　　 软件，即一个零依赖的纯静态文件索引站，由 index.html、assets/ 目录下的
+　　 JavaScript 与 CSS、data/ 目录下的 JSON 与 Markdown 数据文件，以及
+　　 tools/ 目录下的 Node.js 脚本组成；它没有构建步骤，也不依赖任何 npm
+　　 运行时包，可直接部署于静态托管平台（例如 Cloudflare Pages）。
+
+1.2　本项目由许可人原创的部分包括：index.html；assets/app.js、
+　　 assets/markdown.js、assets/icons.js、assets/theme.js 的代码与组织方式；
+　　 assets/icon-paths.js 中图标数据的选取、裁剪与组织方式（图标路径数据本身
+　　 来自第三方，见第 7.9 条与 NOTICE 文件）；assets/style.css；tools/dev.mjs、
+　　 tools/check.mjs、tools/selftest.mjs；以及 data/ 目录下的示例内容。
+　　 除此之外的第三方组件不适用本协议。
+
+1.3　"衍生作品"指基于本项目全部或实质性部分形成的任何作品，包括但不限于：
+　　 修改、增删、重组、翻译、移植本项目代码所形成的版本；将本项目代码并入
+　　 其他项目所形成的整体；对本项目界面或功能进行二次开发所形成的站点。
+　　 仅通过超链接指向本项目、或在未复制本项目任何代码的前提下独立实现相同
+　　 功能的作品，不属于衍生作品。
+
+1.4　"非商业用途"指不以获取商业利益或金钱报酬为目的的使用。下列情形属于
+　　 非商业用途：
+　　 （a）个人学习、研究、试验、自用部署；
+　　 （b）教学、学术研究、公益与慈善机构的使用；
+　　 （c）政府机关、学校、非营利组织为自身非营利职能而部署；
+　　 （d）企业内部使用，但该使用不直接或间接服务于营利目的（例如仅用于
+　　 　　 内部资料索引，不向第三方收费，也不作为收费产品、付费服务或对外
+　　 　　 有偿交付物的组成部分）；
+　　 （e）为上述目的而进行的复制、修改、测试与再分发。
+　　 下列情形属于商业用途，不在本协议授权范围内：
+　　 （f）销售本项目或其衍生作品，或对其收取许可费、订阅费、服务费；
+　　 （g）将本项目或其衍生作品作为付费产品、付费服务、付费课程、会员权益
+　　 　　 的组成部分，或以此招揽客户；
+　　 （h）以本项目或其衍生作品为主要内容或主要卖点运营网站、应用、插件、
+　　 　　 模板市场，并通过广告、流量分成、赞助、打赏等方式获取收入；
+　　 （i）将本项目或其衍生作品用于企业内部直接支撑营收的核心业务系统；
+　　 （j）以本项目或其衍生作品提供托管、代部署、代运维等有偿服务。
+　　 仅向接收者收取介质、带宽、存储的实际成本，不构成商业用途。对是否属于
+　　 商业用途存在疑问时，应先按第 4.3 条取得书面授权。
+
+1.5　"分发"（或称"再分发""传播"）指以任何介质、任何技术手段向第三方提供
+　　 本项目或其衍生作品的副本，包括上传至代码托管平台、发布压缩包、部署为
+　　 可公开访问的网站、随硬件或软件产品交付、以及通过镜像站提供下载。
+
+1.6　"源代码"指进行修改所需的首选形式。对本项目而言，源代码即未压缩、
+　　 未混淆、未打包的 index.html、assets/ 下的 .js 与 .css 文件、data/ 下的
+　　 数据文件、tools/ 下的脚本，以及使其可运行的说明文档。
+
+1.7　"对应源代码"指生成、安装、运行、修改该衍生作品所需的全部源代码，
+　　 包括您新增或修改的全部文件、构建与部署脚本、配置模板、以及重建可运行
+　　 站点所必需的数据结构定义。若您对源代码进行了压缩、合并、转译或打包，
+　　 还须一并提供其原始形式与所用工具配置。
+
+1.8　"您"指依本协议行使权利的自然人，或代表该自然人行事的法人、非法人组织。
+
+1.9　"许可人"指本项目的著作权人 YGPTDR-web，其主页为
+　　 https://github.com/YGPTDR-web 。
+
+1.10　"本协议"指《Flist-lite 非商业相同方式共享许可协议》1.0 版全文，含其附录。
+
+================================================================================
+第二条　授予的权利
+================================================================================
+
+2.1　在您持续遵守本协议全部条件的前提下，许可人授予您一项全球范围、非独占、
+　　 免费、免版税、不可撤回（仅依第六条终止）的著作权许可，允许您：
+　　 （a）使用：运行、安装、部署、公开展示与公开表演本项目，限于第 1.4 条
+　　 　　 所称的非商业用途；
+　　 （b）复制：为上述用途复制本项目全部或部分，副本数量不限；
+　　 （c）修改：对源代码进行修改、增删、重构、翻译、移植，形成衍生作品；
+　　 （d）分发：以源代码形式或目标形式再分发本项目及其衍生作品，包括您
+　　 　　 修改后的版本，限于非商业用途，并须遵守第三条。
+2.2　上述权利可再许可（sublicense）给您的接收者，但再许可的条款不得超出本
+　　 协议，且接收者仍直接受本协议约束。
+
+2.3　本条授予的权利不因本项目免费提供而缩减，也不因您未支付任何费用而受影响。
+
+2.4　本协议授权的是著作权意义上的使用权，第四条明确排除的权利不在授权范围内。
+
+2.5　期间。本协议自您开始行使第二条授予的权利时生效，无固定期限，直至依第
+　　 六条终止。本项目按某一版本的本协议发布时，该版本即依该版本持续授权，
+　　 不因许可人日后发布新版本而改变（见第 7.1、7.2 条）。
+
+================================================================================
+第三条　行使权利的条件
+================================================================================
+
+3.1　署名（必须）
+　　 （a）您必须在衍生作品及其分发载体中，以显著、清晰、不易删除的方式保留
+　　 　　 并展示下列信息：项目名称「Flist-lite」、原作者
+　　 　　 YGPTDR-web、原项目仓库地址、版权声明
+　　 　　 "Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)"、
+　　 　　 以及本协议名称与版本。
+　　 （b）展示位置包括但不限于：站点页脚或"关于"页面、README 或同类说明
+　　 　　 文档、源代码文件头注释、分发包内的 LICENSE 与 NOTICE 文件。
+　　 　　 就一个部署在网站上的衍生作品而言，页脚一处可见的署名即视为满足本项，
+　　 　　 但不得使用需要交互才能发现、或被样式隐藏、或对比度过低的方式呈现。
+　　 （c）不得删除、篡改、遮蔽原作者署名与版权声明；不得以任何方式暗示原
+　　 　　 作者对您的衍生作品作出认可、担保或背书。
+　　 （d）可直接复制的署名样板见附录 A。
+
+3.2　相同方式共享（copyleft，必须）
+　　 （a）您分发衍生作品时，必须使该衍生作品整体以本协议（1.0 版，或经许可
+　　 　　 人书面认可的实质条款相同的后续版本）授权。
+　　 （b）不得将衍生作品改为其他许可证（包括各类开源协议、CC 协议、商业
+　　 　　 许可或专有许可），也不得对其附加与本协议冲突的条款。
+　　 （c）您可以在衍生作品中另行声明您对新增部分的著作权，并可要求他人
+　　 　　 在再分发时保留您新增的署名，但该要求不得缩减接收者依本协议享有的
+　　 　　 权利。
+
+3.3　源代码可得（必须）
+　　 （a）您以目标形式（例如压缩、合并、打包后的静态资源，或仅可访问的线上
+　　 　　 站点）分发衍生作品时，必须同时以不高于实际传输成本的条件，向任何
+　　 　　 接收者提供完整对应源代码。
+　　 （b）若衍生作品通过网络提供访问（即使该访问是非商业的），您必须在
+　　 　　 该站点的显著位置（例如页脚或"关于"页面）提供可直接获取完整对应
+　　 　　 源代码的链接，且该链接应长期有效。
+　　 （c）您不得以保密协议、访问审批、付费墙、注册门槛或其他技术或合同措施，
+　　 　　 阻碍接收者获得对应源代码。
+
+3.4　保留协议与声明（必须）
+　　 （a）分发时须随附本协议全文与 NOTICE 文件的完整副本，不得删减。
+　　 （b）须保留源代码文件中原有的版权声明、许可声明与第三方授权注释。
+　　 （c）NOTICE 文件的内容仅供说明之用，不修改本协议条款；您可以在其后
+　　 　　 追加自己的声明，但不得使追加内容被理解为对本协议的修改。
+
+3.5　标注修改（必须）
+　　 （a）您修改过的每一个文件，都须以显著方式说明"该文件已被修改"，并注明
+　　 　　 修改日期；可在文件头注释、CHANGELOG 或同类文档中集中说明。
+　　 （b）若您删除了本项目的部分文件或功能，应在同一位置说明删除情况，
+　　 　　 以免接收者误认为缺失部分属于原项目。
+
+3.6　不得额外限制（必须）
+　　 您不得对接收者行使本协议授予的权利施加任何法律或技术限制，包括但不限于
+　　 附加使用范围限制、要求额外付费、以数字版权管理或代码混淆阻碍其阅读与
+　　 修改源代码。对商标、名称使用的合理限制不在此列（见第 4.3 条）。
+
+3.7　示例内容的特别许可
+　　 data/ 目录下的示例内容（示例文件清单、公告、笔记文本等）仅用于演示。
+　　 对该部分内容，许可人额外允许您：自行替换或删除，无须署名，也无须遵守
+　　 第 3.2 条的相同方式共享要求；如您保留并再分发这些示例内容，可选择适用
+　　 CC0-1.0（公有领域贡献）而非本协议。本项豁免仅适用于 data/ 下的示例
+　　 内容，不适用于任何 HTML、CSS、JavaScript、脚本或文档，也不免除您对
+　　 代码部分的署名与相同方式共享义务。
+
+================================================================================
+第四条　不授予的权利
+================================================================================
+
+4.1　商业使用须另行授权。本协议不授予任何商业用途的权利。拟将本项目或其
+　　 衍生作品用于第 1.4 条（f）至（j）项情形者，须事先取得许可人的书面
+　　 授权（可采用电子邮件的书面形式），授权范围、费用与条件以该书面文件
+　　 为准。未取得书面授权而进行商业使用，不因本协议而获得任何许可。
+
+4.2　专利：仅授予非商业专利许可。为免疑义，许可人在此明确授予您一项全球
+　　 范围、非独占、免费、免版税、不可撤回（仅依第 4.2 条末句与第六条终止）
+　　 的专利许可，允许您在「非商业用途」范围内制造、使用、销售（限于非商业
+　　 分发）、许诺销售、进口本项目的全部或部分，该许可仅覆盖许可人拥有或
+　　 有权许可的、且为实施本项目所必需的专利权利要求。本项许可不延伸至商业
+　　 用途；商业用途所需的专利许可须依第 4.1 条另行取得。若您或您的关联方就
+　　 本项目向许可人或任何接收者提起专利诉讼（包括反诉与交叉诉讼），主张本
+　　 项目构成专利侵权，则本项授予您的专利许可自起诉之日起终止。
+
+4.3　商标与名称。本协议不授予使用「Flist-lite」名称、许可人的
+　　 名称、标识、域名或任何商标、商号、服务标记的权利，但为如实说明作品
+　　 来源、复述本协议与 NOTICE 内容、或在署名中标注原作者而进行的合理、
+　　 惯常使用除外。您不得以许可人名义发布衍生作品，也不得使用可能使人误认
+　　 为官方版本的名称或标识。
+
+4.4　未明示授予的权利均予保留。本协议未明确授予的一切权利，包括但不限于
+　　 著作权中的其他权能（第 2.1 条明示授予的使用、复制、修改、分发除外）、
+　　 商标权、专利权（第 4.2 条明示授予的非商业专利许可除外）、商业秘密与
+　　 数据库权利，均由许可人保留。
+
+================================================================================
+第五条　免责声明与责任限制
+================================================================================
+
+5.1　按现状提供。本项目及其源代码按"现状"（AS IS）与"现有"（AS AVAILABLE）
+　　 提供，不附带任何明示或默示的担保，包括但不限于对适销性、特定用途适用
+　　 性、权利完整性、不侵犯第三方权利、无病毒或其他有害代码、无错误、不
+　　 中断、以及数据不丢失的担保。许可人未就本项目作出任何性能、兼容性或
+　　 可用性承诺。
+
+5.2　不承担间接损害。在适用法律允许的最大范围内，许可人不对任何间接、
+　　 附带、特殊、惩罚性、示范性或后果性损害承担责任，包括但不限于利润
+　　 损失、收入损失、预期收益损失、数据丢失或损坏、业务中断、设备损坏、
+　　 商誉损失、替代服务的采购成本，以及因第三方主张权利而产生的费用，
+　　 无论该等损害基于合同、侵权（含过失）、严格责任或其他法律理论，也无论
+　　 许可人是否已被告知该等损害的可能性。
+
+5.3　责任总额上限。在适用法律允许的最大范围内，许可人就本协议或本项目
+　　 所产生或与之相关的全部索赔，承担的累计赔偿责任总额为零元（￥0.00），
+　　 因为本项目系免费提供，您未就本协议向许可人支付任何费用。若某一法域
+　　 的法律不允许将责任完全排除，则许可人的累计责任上限为您就使用本项目
+　　 实际向许可人支付的金额（通常为零）；该金额不足以覆盖全部损失时，
+　　 不足部分由您自行承担。
+
+5.4　您自行承担使用风险与合规义务。您应自行判断本项目是否适合您的用途，
+　　 并自行负责：部署与运行环境的配置与安全；所索引、存储、分发内容的
+　　 合法性；第三方内容的著作权、肖像权与其他权利；以及遵守您所在法域
+　　 关于数据、隐私、内容与出口管制的法律。
+
+5.5　本协议不是法律意见。本协议由项目作者起草，不构成对任何人的法律建议。
+　　 在签署商业合同、进行商业部署或发生争议前，请咨询执业律师。
+
+================================================================================
+第六条　协议的终止与恢复
+================================================================================
+
+6.1　自动终止。您违反本协议任何条款（包括第 3.1 至 3.6 条的条件）时，
+　　 本协议授予您的全部权利自违约之日起自动终止，无需许可人另行通知。
+
+6.2　终止后的义务。权利终止后，您必须立即停止使用、修改与分发本项目及其
+　　 衍生作品，删除或销毁您持有或控制的全部副本，并停止以任何形式提供
+　　 下载或访问。为存档、法律合规或争议举证之目的而保留的副本不受本项
+　　 限制，但不得继续被使用或分发。
+
+6.3　自动恢复。若违约属于首次发生、且非故意或非重大过失，您在发现违约后
+　　 三十（30）日内完全纠正违约行为（例如补齐署名、公开源代码、停止商业
+　　 使用并删除相关副本），则本协议授予的权利自纠正之日起自动恢复。
+
+6.4　书面恢复。除第 6.3 条外，许可人可自行决定以书面形式恢复您的权利，
+　　 恢复的范围与条件以该书面文件为准。许可人未对某次违约作出回应，不构成
+　　 对该违约的放弃，也不构成对其他违约的放弃。
+
+6.5　对接收者的影响。您依本协议合法分发的副本，其接收者所获得的许可不因
+　　 您的违约而终止，但该接收者仍须自行遵守本协议。若其接收的副本本身即
+　　 不符合本协议（例如缺少署名或源代码），则其使用该副本不获授权。
+
+6.6　存续条款。第一条（定义）、第三条（就已分发副本的署名与协议保留义务）、
+　　 第四条、第五条、第六条与第七条在本协议终止后继续有效。
+
+================================================================================
+第七条　版本、适用与其他
+================================================================================
+
+7.1　版本。本协议版本号为 1.0。本项目按本协议 1.0 版发布。本协议不含
+　　 "或任何更新版本"的自动适用条款：后续版本须由许可人明确声明适用于
+　　 本项目，才对新的使用生效；已依 1.0 版取得的授权不因新版本发布而改变。
+
+7.2　修改本协议。许可人可发布本协议的新版本，但新版本不影响此前依 1.0 版
+　　 作出的授权。
+
+7.3　如何将本协议适用于您的衍生作品。
+　　 （a）在衍生作品根目录保留名为 LICENSE 的文件，内容为本协议全文；
+　　 （b）保留 NOTICE 文件，并在其中补充您的名称、年份与修改说明；
+　　 （c）在站点页脚、README 或"关于"页面按附录 A 的样板标注来源；
+　　 （d）在您修改过的源代码文件头部加入第 3.5 条要求的修改说明。
+　　 附录 A 提供了一个文件头注释模板，可直接复制使用。
+
+7.4　可分割性。本协议任何条款被认定无效或不可执行时，该条款应在必要范围内
+　　 被限缩或删除，其余条款继续有效，且不影响本协议的整体目的。
+
+7.5　完整协议。本协议与其附录构成许可人与您之间关于本项目的完整许可约定，
+　　 取代此前就同一标的口头或书面的许可表述。NOTICE 文件与 README 中的
+　　 说明性文字不构成对本协议的修改。
+
+7.6　不放弃。许可人未行使或延迟行使本协议项下的任何权利，不构成对该权利的
+　　 放弃。
+
+7.7　语言效力。本协议以中文文本为唯一具有法律效力的文本。附录 B 的英文
+　　 文本仅为方便理解而提供，不产生独立的法律效力；中英文本文义不一致时，
+　　 以中文文本为准。
+
+7.8　适用法律与争议解决。本协议的解释与适用，依许可人主要居所所在地法律
+　　 处理（不含其冲突法规则）。因本协议产生的争议，双方应首先友好协商；
+　　 协商不成的，提交该地有管辖权的法院解决。
+
+7.9　第三方组件。本项目分发的第三方组件（Bootstrap Icons、Ionicons）依其
+　　 原有 MIT 许可授权，不受本协议约束，详见 NOTICE 文件。MIT 许可允许
+　　 商业使用，与本协议的非商业限制并存：就这些组件而言，您可以直接适用
+　　 MIT 许可。若您将 AGPL-3.0 授权的代码（例如 OpenList、AList 服务端代码）
+　　 并入本项目，则整个作品须依 AGPL-3.0 分发并公开源代码；该做法与本协议
+　　 不兼容，不得以本协议分发含有上述代码的作品。
+
+================================================================================
+附录 A　署名与引用样板（可直接复制）
+================================================================================
+
+A.1　文字署名（用于 README、关于页面、NOTICE 追加段落）：
+
+　　 本作品基于「Flist-lite」修改而成。
+　　 原项目：Flist-lite　https://github.com/YGPTDR-web/flist-lite
+　　 原作者：YGPTDR-web　https://github.com/YGPTDR-web
+　　 Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+　　 本衍生作品依《Flist-lite 非商业相同方式共享许可协议 1.0》
+　　 （Flist-lite Non-Commercial Share-Alike License 1.0）授权，
+　　 完整条款见本目录下的 LICENSE 文件。
+　　 该协议不是 OSI 定义的开源协议：禁止商业使用，衍生作品须以相同条款开源。
+　　 修改说明：<在此写明您修改了什么，以及修改日期>
+　　 对应源代码：<在此给出可长期访问的源代码地址>
+
+A.2　网页页脚署名（HTML 片段，样式自定）：
+
+　　 <p class="site-license">
+　　　 基于 <a href="https://github.com/YGPTDR-web/flist-lite">Flist-lite</a>
+　　　 修改 ｜ 原作者 <a href="https://github.com/YGPTDR-web">YGPTDR-web</a>
+　　　 ｜ Copyright 2026 YGPTDR-web ｜
+　　　 依 <a href="./LICENSE">Flist-lite 非商业相同方式共享许可协议 1.0</a> 授权
+　　　 （非开源协议，禁止商业使用）
+　　 </p>
+
+A.3　源代码文件头注释模板：
+
+　　 /*
+　　　* 本文件基于「Flist-lite」修改。
+　　　* 原项目：https://github.com/YGPTDR-web/flist-lite
+　　　* Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+　　　* 依《Flist-lite 非商业相同方式共享许可协议 1.0》授权，见 LICENSE。
+　　　* 修改说明：<改了什么>　修改日期：<YYYY-MM-DD>
+　　　*/
+
+A.4　填写提示：
+　　 （a）请将上述样板中的仓库地址替换为您实际使用的原始仓库地址；
+　　 （b）"修改说明"须如实描述您的改动，不能留空或写"无"；
+　　 （c）署名中不得出现您并不拥有或无权代表的名称、标识或法律主体；
+　　 （d）如为多个上游作者，可各占一行，不要合并成一行。
+
+================================================================================
+附录 B　English Reference Translation（仅供参考，不具法律效力）
+================================================================================
+
+NOTE: The Chinese text above is the sole legally binding version. This English
+translation is provided for convenience of understanding only and has no
+independent legal effect. In case of any discrepancy, the Chinese text
+prevails.
+
+Flist-lite Non-Commercial Share-Alike License 1.0
+
+Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+
+Section 0. Nature of this License
+
+0.1 This License permits anyone to use, copy, modify and redistribute the Work
+    free of charge for Non-Commercial purposes, prohibits Commercial Use, and
+    requires Derivative Works to be released under the same terms with complete
+    Corresponding Source.
+
+0.2 This License is NOT an open source license as defined by the Open Source
+    Initiative (OSI). The OSI Open Source Definition requires that a license not
+    discriminate against fields of endeavor, while Section 1.4 of this License
+    expressly excludes Commercial Use; the two conflict directly. The accurate
+    description of this project is therefore source-available with
+    non-commercial copyleft. This License has not been reviewed by the OSI and
+    must not be described or promoted as an "open source" license.
+
+0.3 This License is a copyright license, not a sale, and does not transfer
+    ownership of the copyright, which remains with the Licensor named in
+    Section 1.9.
+
+0.4 Differences from other common licenses (informational only; they do not
+    modify any provision): CC BY-NC-SA 4.0 also combines non-commercial use,
+    attribution and share-alike, but is designed for content rather than
+    software, does not address source code delivery and contains no patent
+    grant. PolyForm Noncommercial 1.0.0 satisfies the non-commercial
+    requirement but does not require Derivative Works to be open source.
+    Apache-2.0 and MIT are OSI-approved open source licenses that permit
+    Commercial Use, contrary to Section 1.4; their conventional wording on
+    attribution, patents and disclaimers informed the drafting of this License.
+
+0.5 This License is not legal advice. Consult a qualified lawyer for commercial
+    scenarios, cross-border deployment, or where third-party rights are
+    involved.
+
+0.6 Acceptance. By using, copying, modifying or distributing the Project in any
+    way you accept all terms of this License; if you do not accept them, you may
+    not exercise any right granted in Section 2. When the Project is distributed
+    as a website, a prominent link to the full text of this License must be
+    provided in the site footer or an "about" page, together with the attribution
+    required by Section 3.1.
+
+Section 1. Definitions
+
+1.1 "The Project" (also "the Licensed Work") means the software "Flist-lite"
+    released under this License: a dependency-free, purely static file index
+    site consisting of index.html, the JavaScript and CSS files under assets/,
+    the JSON and Markdown data files under data/, and the Node.js scripts under
+    tools/; it has no build step, depends on no npm runtime package, and can be
+    deployed directly to a static hosting platform such as Cloudflare Pages.
+
+1.2 The parts of the Project originally created by the Licensor are: index.html;
+    the code and organization of assets/app.js, assets/markdown.js,
+    assets/icons.js and assets/theme.js; the selection, trimming and
+    organization of the icon data in assets/icon-paths.js (the path data itself
+    originates from third parties, see Section 7.9); assets/style.css;
+    tools/dev.mjs, tools/check.mjs and tools/selftest.mjs; and the sample
+    content under data/. Third-party components are not governed by this
+    License.
+
+1.3 "Derivative Work" means any work based on all or a substantial part of the
+    Project, including modified, extended, reorganized, translated or ported
+    versions, any work into which the Project's code is incorporated, and any
+    site produced by further developing the Project's interface or features. A
+    work that merely links to the Project, or independently implements similar
+    functionality without copying any of the Project's code, is not a Derivative
+    Work.
+
+1.4 "Non-Commercial" means use not aimed at commercial advantage or monetary
+    compensation. The following are Non-Commercial: (a) personal study,
+    research, experimentation and self-hosted use; (b) teaching, academic
+    research, and use by charitable or public-interest organizations; (c) use by
+    government bodies, schools or non-profit organizations in their
+    non-commercial functions; (d) internal use within an enterprise that does
+    not directly or indirectly serve a profit-making purpose, such as internal
+    document indexing that is not charged to third parties and is not part of a
+    paid product, paid service or paid deliverable; (e) copying, modification,
+    testing and redistribution for the purposes above. The following are
+    Commercial Use and are outside the scope of this License: (f) selling the
+    Project or a Derivative Work, or charging license, subscription or service
+    fees for it; (g) including the Project or a Derivative Work in a paid
+    product, paid service, paid course or membership offering, or using it to
+    solicit customers; (h) operating a website, application, plugin or template
+    marketplace whose main content or main selling point is the Project or a
+    Derivative Work and which earns revenue from advertising, traffic sharing,
+    sponsorship or donations; (i) using the Project or a Derivative Work in
+    core revenue-generating business systems of an enterprise; (j) providing
+    paid hosting, deployment or operations services based on the Project or a
+    Derivative Work. Charging recipients only the actual cost of media,
+    bandwidth or storage is not Commercial Use. Where Commercial Use is
+    uncertain, written authorization under Section 4.1 must be obtained first.
+
+1.5 "Distribute" means providing copies of the Project or a Derivative Work to
+    third parties by any medium or technical means, including uploading to a
+    code hosting platform, publishing an archive, deploying as a publicly
+    accessible website, shipping with hardware or software products, or offering
+    downloads through a mirror.
+
+1.6 "Source Code" means the preferred form for making modifications. For the
+    Project this means the uncompressed, unobfuscated, unbundled index.html,
+    the .js and .css files under assets/, the data files under data/, the
+    scripts under tools/, and the documentation needed to run them.
+
+1.7 "Corresponding Source" means all Source Code needed to generate, install,
+    run and modify the Derivative Work, including every file you add or modify,
+    build and deployment scripts, configuration templates, and the data
+    structure definitions required to rebuild a working site. If you compress,
+    combine, transpile or bundle the Source Code, you must also provide the
+    original form and the tool configuration used.
+
+1.8 "You" means the individual exercising rights under this License, or the
+    legal entity or unincorporated organization acting on that individual's
+    behalf.
+
+1.9 "Licensor" means the copyright holder of the Project, YGPTDR-web, whose
+    homepage is https://github.com/YGPTDR-web.
+
+1.10 "This License" means version 1.0 of the Flist-lite Non-Commercial
+     Share-Alike License in full, including its appendices.
+
+Section 2. Grant of Rights
+
+2.1 Subject to your continued compliance with all conditions of this License,
+    the Licensor grants you a worldwide, non-exclusive, royalty-free,
+    irrevocable (except for termination under Section 6) copyright license to:
+    (a) use: run, install, deploy, publicly display and publicly perform the
+    Project, for Non-Commercial purposes only; (b) copy: reproduce all or part
+    of the Project for those purposes, without limit on the number of copies;
+    (c) modify: modify, add to, delete from, restructure, translate or port the
+    Source Code to create Derivative Works; (d) distribute: redistribute the
+    Project and Derivative Works, including your modified versions, in source
+    or object form, for Non-Commercial purposes only and subject to Section 3.
+
+2.2 These rights may be sublicensed to your recipients, provided the sublicense
+    grants no more than this License does and the recipients remain directly
+    bound by this License.
+
+2.3 The rights granted here are not reduced because the Project is provided free
+    of charge, nor affected by the absence of any payment by you.
+
+2.4 These rights are copyright rights only and do not include the rights
+    excluded in Section 4.
+
+2.5 Term. This License takes effect when you begin exercising the rights granted
+    in Section 2 and continues without a fixed term until terminated under
+    Section 6. A release of the Project under a given version of this License
+    remains licensed under that version notwithstanding any later version
+    published by the Licensor (see Sections 7.1 and 7.2).
+
+Section 3. Conditions
+
+3.1 Attribution (mandatory). (a) You must retain and display, in the Derivative
+    Work and in its distribution media, in a prominent, clear and
+    non-removable manner: the project name "Flist-lite", the original
+    author YGPTDR-web, the original repository URL, the copyright notice
+    "Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)", and the name
+    and version of this License. (b) Display locations include the site footer
+    or an "about" page, the README or equivalent document, source file headers,
+    and the LICENSE and NOTICE files in the distribution. For a site deployed
+    as a Derivative Work, one visible footer attribution satisfies this item,
+    but it must not require interaction to discover, be hidden by styling, or
+    have insufficient contrast. (c) You must not delete, alter or obscure the
+    original author's attribution or copyright notice, and must not suggest that
+    the original author endorses, warrants or sponsors your Derivative Work.
+    (d) A copy-ready attribution template is provided in Appendix A.
+
+3.2 Share-Alike (copyleft, mandatory). (a) When you Distribute a Derivative
+    Work, you must license the Derivative Work as a whole under this License
+    (version 1.0, or a later version with materially identical terms accepted
+    in writing by the Licensor). (b) You must not relicense the Derivative Work
+    under any other license, including open source licenses, Creative Commons
+    licenses, commercial licenses or proprietary licenses, and must not impose
+    terms that conflict with this License. (c) You may assert your own copyright
+    in the parts you added and require retention of your own attribution on
+    redistribution, provided that requirement does not reduce the rights
+    recipients hold under this License.
+
+3.3 Source availability (mandatory). (a) When you Distribute a Derivative Work
+    in object form (for example compressed, combined or bundled static assets,
+    or an online site only), you must at the same time provide the complete
+    Corresponding Source to any recipient at no more than the actual cost of
+    transmission. (b) If the Derivative Work is made accessible over a network,
+    even for Non-Commercial access, you must provide, in a prominent place on
+    that site such as the footer or an "about" page, a link for directly
+    obtaining the complete Corresponding Source, and that link must remain
+    available on a lasting basis. (c) You must not obstruct recipients' access
+    to the Corresponding Source through confidentiality agreements, access
+    approval, paywalls, registration requirements, or other technical or
+    contractual measures.
+
+3.4 Retention of license and notices (mandatory). (a) Distributions must include
+    the full text of this License and a complete copy of the NOTICE file,
+    without abridgement. (b) You must retain the original copyright, license and
+    third-party notices in the source files. (c) The contents of the NOTICE file
+    are informational and do not modify this License; you may append your own
+    notices, provided the additions cannot be read as modifying this License.
+
+3.5 Marking modifications (mandatory). (a) Each file you modify must carry a
+    prominent statement that the file has been modified, with the date of
+    modification; this may be recorded in file headers, a CHANGELOG or an
+    equivalent document. (b) If you delete files or features of the Project, you
+    must note the deletion in the same place so recipients are not misled into
+    thinking the missing parts belong to the original Project.
+
+3.6 No additional restrictions (mandatory). You must not impose any legal or
+    technical restriction on recipients' exercise of the rights granted by this
+    License, including additional scope limitations, extra fees, or digital
+    rights management or code obfuscation that impedes reading and modifying the
+    Source Code. Reasonable restrictions on the use of trademarks and names are
+    excluded from this rule (see Section 4.3).
+
+3.7 Special permission for sample content. The sample content under data/
+    (sample file listing, announcement and note texts) is for demonstration
+    only. For that content the Licensor additionally permits you to replace or
+    delete it without attribution and without the share-alike requirement of
+    Section 3.2; if you retain and redistribute it, you may choose to apply
+    CC0-1.0 (public domain dedication) instead of this License. This exemption
+    covers only the sample content under data/ and not any HTML, CSS,
+    JavaScript, script or documentation, and does not relieve you of the
+    attribution and share-alike obligations for code.
+
+Section 4. Rights Not Granted
+
+4.1 Commercial use requires separate authorization. This License grants no
+    right of Commercial Use. Anyone intending to use the Project or a Derivative
+    Work in the cases listed in Section 1.4 (f) to (j) must first obtain written
+    authorization from the Licensor (including by email), on the scope, fees and
+    conditions stated in that writing. Commercial Use without such written
+    authorization is not licensed by this License.
+
+4.2 Patents: non-commercial patent license only. For the avoidance of doubt,
+    the Licensor grants you a worldwide, non-exclusive, royalty-free,
+    irrevocable (except as stated in the last sentence of this Section 4.2 and
+    in Section 6) patent license to make, use, sell (for Non-Commercial
+    distribution only), offer for sale and import the Project in whole or in
+    part, solely for Non-Commercial purposes, covering only those patent claims
+    owned or licensable by the Licensor that are necessary to practice the
+    Project. This grant does not extend to Commercial Use; patent rights needed
+    for Commercial Use must be obtained separately under Section 4.1. If you or
+    an affiliate institute patent litigation against the Licensor or any
+    recipient alleging that the Project infringes a patent (including a
+    counterclaim or cross-claim), the patent license granted to you under this
+    Section terminates as of the date the litigation is filed.
+
+4.3 Trademarks and names. This License grants no right to use the names
+    "Flist-lite", the Licensor's name, logos, domain names, or any
+    trademark, trade name or service mark, except for reasonable and customary
+    use in truthfully describing the origin of the work, reproducing this
+    License and the NOTICE, or naming the original author in attribution. You
+    must not publish a Derivative Work under the Licensor's name, nor use a name
+    or logo likely to suggest it is an official version.
+
+4.4 All rights not expressly granted are reserved, including other copyright
+    rights (other than the use, copying, modification and distribution expressly
+    granted in Section 2.1), trademark rights, patent rights (other than the
+    non-commercial patent license expressly granted in Section 4.2), trade
+    secrets and database rights.
+
+Section 5. Disclaimer of Warranty and Limitation of Liability
+
+5.1 Provided "AS IS". The Project and its Source Code are provided "AS IS" and
+    "AS AVAILABLE" without any express or implied warranty, including warranties
+    of merchantability, fitness for a particular purpose, title,
+    non-infringement, freedom from viruses or other harmful code, accuracy,
+    uninterrupted operation, and freedom from data loss. The Licensor makes no
+    commitment regarding performance, compatibility or availability.
+
+5.2 No indirect damages. To the maximum extent permitted by applicable law, the
+    Licensor is not liable for any indirect, incidental, special, punitive,
+    exemplary or consequential damages, including lost profits, lost revenue,
+    lost anticipated savings, loss or corruption of data, business
+    interruption, damage to equipment, loss of goodwill, cost of substitute
+    services, and costs arising from third-party claims, whether based in
+    contract, tort (including negligence), strict liability or any other legal
+    theory, and whether or not the Licensor was advised of the possibility of
+    such damages.
+
+5.3 Aggregate liability cap. To the maximum extent permitted by applicable law,
+    the Licensor's total aggregate liability for all claims arising out of or
+    relating to this License or the Project is zero (0.00). If the law of a
+    jurisdiction does not permit a complete exclusion of liability, the cap is
+    the amount you actually paid the Licensor for use of the Project (normally
+    zero); any shortfall is borne by you.
+
+5.4 Your risk and compliance. You are responsible for determining whether the
+    Project suits your purpose, and for the configuration and security of your
+    deployment environment, the lawfulness of the content you index, store or
+    distribute, third-party copyright, likeness and other rights, and
+    compliance with the laws of your jurisdiction on data, privacy, content and
+    export control.
+
+5.5 Not legal advice. This License was drafted by the project author and is not
+    legal advice to anyone. Consult a qualified lawyer before entering
+    commercial contracts, making commercial deployments, or in the event of a
+    dispute.
+
+Section 6. Termination and Reinstatement
+
+6.1 Automatic termination. If you breach any provision of this License,
+    including the conditions in Sections 3.1 to 3.6, all rights granted to you
+    terminate automatically as of the date of the breach, without further notice
+    from the Licensor.
+
+6.2 Obligations after termination. You must immediately stop using, modifying
+    and Distributing the Project and Derivative Works, delete or destroy all
+    copies in your possession or control, and cease offering downloads or
+    access. Copies retained solely for archiving, legal compliance or evidence
+    are not affected, but must not continue to be used or Distributed.
+
+6.3 Automatic reinstatement. If the breach is a first breach and is not
+    willful or grossly negligent, and you fully cure it within thirty (30) days
+    of discovering it (for example by adding the attribution, publishing the
+    source, ceasing Commercial Use and deleting the relevant copies), the rights
+    granted by this License are reinstated automatically as of the date of cure.
+
+6.4 Written reinstatement. Apart from Section 6.3, the Licensor may reinstate
+    your rights in writing at its discretion, on the scope and conditions stated
+    in that writing. The Licensor's failure to respond to a breach is not a
+    waiver of that breach or of any other breach.
+
+6.5 Effect on recipients. The license of a recipient who received a copy
+    lawfully Distributed by you is not terminated by your breach, but that
+    recipient must comply with this License independently. If the copy received
+    does not itself comply with this License (for example it lacks attribution
+    or source), the recipient's use of that copy is not licensed.
+
+6.6 Survival. Sections 1 (Definitions), 3 (as to attribution and license
+    retention for copies already Distributed), 4, 5, 6 and 7 survive
+    termination of this License.
+
+Section 7. Versions, Application and Miscellaneous
+
+7.1 Version. This License is version 1.0. The Project is released under
+    version 1.0. This License contains no "or any later version" automatic
+    upgrade: later versions apply to new uses only if the Licensor expressly
+    states that they apply to the Project; authorizations already obtained under
+    version 1.0 are unaffected by a new version.
+
+7.2 Modifications of this License. The Licensor may publish new versions, which
+    do not affect authorizations previously made under version 1.0.
+
+7.3 How to apply this License to your Derivative Work. (a) Keep a file named
+    LICENSE in the root of the Derivative Work containing the full text of this
+    License; (b) keep the NOTICE file and add your name, year and a description
+    of modifications; (c) attribute the origin in the site footer, README or
+    "about" page following the template in Appendix A; (d) add the modification
+    statement required by Section 3.5 to the header of each file you modified.
+    Appendix A.3 contains a file-header template you can copy directly.
+
+7.4 Severability. If any provision is held invalid or unenforceable, it shall be
+    narrowed or severed to the minimum extent necessary, the remaining
+    provisions shall continue in effect, and the overall purpose of this
+    License shall not be affected.
+
+7.5 Entire agreement. This License and its appendices constitute the entire
+    licensing agreement between the Licensor and you regarding the Project and
+    supersede prior oral or written licensing statements on the same subject.
+    The explanatory text in the NOTICE file and the README does not modify this
+    License.
+
+7.6 No waiver. The Licensor's failure or delay in exercising any right under
+    this License is not a waiver of that right.
+
+7.7 Language. The Chinese text of this License is the sole legally binding
+    version. The English text in Appendix B is provided for convenience only and
+    has no independent legal effect; in case of discrepancy, the Chinese text
+    prevails.
+
+7.8 Governing law and disputes. This License is governed by the law of the
+    Licensor's principal place of residence, excluding its conflict-of-law
+    rules. The parties shall first seek an amicable resolution; failing that,
+    the courts with jurisdiction at that place shall have jurisdiction.
+
+7.9 Third-party components. The third-party components Distributed with the
+    Project (Bootstrap Icons and Ionicons) are licensed under their own MIT
+    licenses and are not governed by this License; see the NOTICE file. The MIT
+    license permits commercial use and coexists with the non-commercial
+    restriction of this License: for those components you may rely directly on
+    the MIT license. If you incorporate code licensed under AGPL-3.0 (for
+    example OpenList or AList server code) into the Project, the entire work
+    must be Distributed under AGPL-3.0 with its source published; that is
+    incompatible with this License, and a work containing such code must not be
+    Distributed under this License.
+
+Appendix A. Attribution and Citation Templates
+
+A.1 Text attribution (for README, about page, or an appended NOTICE paragraph):
+
+    This work is based on and modifies "Flist-lite".
+    Original project: Flist-lite  https://github.com/YGPTDR-web/flist-lite
+    Original author:  YGPTDR-web  https://github.com/YGPTDR-web
+    Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+    This Derivative Work is licensed under the Flist-lite Non-Commercial
+    Share-Alike License 1.0; the full terms are in the LICENSE file.
+    That license is not an OSI open source license: commercial use is
+    prohibited and Derivative Works must be open-sourced under the same terms.
+    Modifications: <describe what you changed and when>
+    Corresponding Source: <permanent URL of the source code>
+
+A.2 Web footer attribution (HTML fragment; style as desired):
+
+    <p class="site-license">
+      Based on <a href="https://github.com/YGPTDR-web/flist-lite">Flist-lite</a>,
+      modified. Original author
+      <a href="https://github.com/YGPTDR-web">YGPTDR-web</a>.
+      Copyright 2026 YGPTDR-web. Licensed under the
+      <a href="./LICENSE">Flist-lite Non-Commercial Share-Alike License 1.0</a>
+      (not an open source license; commercial use prohibited).
+    </p>
+
+A.3 Source file header template:
+
+    /*
+     * This file is based on and modifies "Flist-lite".
+     * Original project: https://github.com/YGPTDR-web/flist-lite
+     * Copyright 2026 YGPTDR-web (https://github.com/YGPTDR-web)
+     * Licensed under the Flist-lite Non-Commercial Share-Alike License 1.0;
+     * see LICENSE. Modifications: <what changed>  Date: <YYYY-MM-DD>
+     */
+
+A.4 Notes. (a) Replace the repository URL with the original repository you
+    actually used. (b) The modifications statement must truthfully describe your
+    changes and may not be left blank or say "none". (c) Attribution must not
+    name a legal entity you do not own or represent. (d) With multiple upstream
+    authors, use one line each rather than combining them.
+
+================================================================================
+协议文本结束　END OF THE LICENSE TEXT
+================================================================================
